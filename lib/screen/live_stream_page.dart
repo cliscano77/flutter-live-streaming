@@ -21,7 +21,7 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
   CameraController? _controller;
   bool _isCameraPermissionGranted = false;
   bool _isCameraInitialized = false;
-  bool _isInitializing = false;
+  final bool _isInitializing = false;
   bool _isStreaming = false;
   bool _isFrontCamSelected = true;
 
@@ -59,8 +59,6 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
     await Permission.camera.request();
     var status = await Permission.camera.status;
 
-    print('status camera $status');
-
     if (status.isGranted) {
       log('Camera Permission: GRANTED');
       setState(() {
@@ -76,7 +74,7 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
 
   _startVideoStreaming() async {
 
-    String url = streamBaseURL + "d0fd4a05-edd5-156f-1457-ae0b146b1e35";
+    String url = streamBaseURL + "7f9fc18c-5904-d58c-d09f-217726f32dcf";
 
     try {
       await _controller!.startVideoStreaming(url, androidUseOpenGL: false);
@@ -94,13 +92,11 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
   }
 
   void _onNewCameraSelected(CameraDescription cameraDescription) async {
-    print('entro _onNewCameraSelected()');
 
     setState(() {
       _isCameraInitialized = false;
     });
 
-    print('state _isCameraInitialized $_isCameraInitialized');
 
     final previousCameraController = _controller;
 
@@ -133,10 +129,6 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
 
       if (mounted) setState(() {});
     });
-
-
-    print('_isStreaming $_isStreaming');
-    print('_isCameraInitialized $_isCameraInitialized');
 
     try {
       await cameraController.initialize();
@@ -285,7 +277,7 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
                     ],
                   ),
 
-                /////// inicialize streaming
+                /////// initialize streaming
                _isCameraInitialized && _controller!.value.isStreamingVideoRtmp ?
                  Align(
                    alignment: Alignment.bottomCenter,
@@ -310,8 +302,8 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
                                    mainAxisSize: MainAxisSize.min,
                                    crossAxisAlignment:
                                    CrossAxisAlignment.start,
-                                   children: [
-                                     const Text(
+                                   children: const [
+                                     Text(
                                        'Stream ID',
                                        style: TextStyle(
                                          fontSize: 20,
@@ -320,10 +312,10 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
                                          color: Colors.white,
                                        ),
                                      ),
-                                     const SizedBox(height: 4),
+                                     SizedBox(height: 4),
                                      Text(
-                                       "agsashgasasg",
-                                       style: const TextStyle(
+                                       "7f9fc18c-5904-d58c-d09f-217726f32dcf",
+                                       style: TextStyle(
                                          fontSize: 14,
                                          fontWeight: FontWeight.w500,
                                          letterSpacing: 1,
