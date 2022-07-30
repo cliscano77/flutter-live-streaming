@@ -16,7 +16,7 @@ class _PlaybackPageState extends State<PlaybackPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    String playbackId = "8j00Y67YvcoHBF9nGwYwlVgnDn2KTo02hcU6fdwBa6b6M";
+    String playbackId = "00pwH5uFUIi5Y9rIg2UfVRliGn01lwTtw02sOt2q51OLn00";
     _videoController = VideoPlayerController.network(
         '$muxStreamBaseUrl/$playbackId.$videoExtension')
       ..initialize().then((_) {

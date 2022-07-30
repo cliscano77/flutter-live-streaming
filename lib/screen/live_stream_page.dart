@@ -74,7 +74,7 @@ class _LiveStreamPageState extends State<LiveStreamPage> {
 
   _startVideoStreaming() async {
 
-    String url = streamBaseURL + "7f9fc18c-5904-d58c-d09f-217726f32dcf";
+    String url = streamBaseURL + "19b57510-af75-85dc-3ad8-4f19170c587e";
 
     try {
       await _controller!.startVideoStreaming(url, androidUseOpenGL: false);

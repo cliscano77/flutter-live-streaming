@@ -25,7 +25,7 @@ class _DashboardPageState extends State<DashboardPage> {
         centerTitle: true,
         backgroundColor: Colors.pink,
         title: const Text(
-          'MUX Live Stream',
+          'MUX Live Streaming',
           style: TextStyle(
             fontSize: 22,
             color: Colors.white,
